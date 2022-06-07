@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="jpg">
+    <file>image/android.jpg</file>
+  </qresource>
+</RCC>
