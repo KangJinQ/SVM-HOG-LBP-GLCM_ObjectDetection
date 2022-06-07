@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>960</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <kerning>true</kerning>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>myWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>F:/Pictures/NIKE.jpg</normaloff>F:/Pictures/NIKE.jpg</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow
+{background-image: url(:/jpg/image/android.jpg);}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>510</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>关闭</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>591</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>28</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{color:white}</string>
+    </property>
+    <property name="text">
+     <string>连铸板坯低倍组织缺陷识别</string>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="verticalSlider">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>170</y>
+      <width>22</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelimg">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>821</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>140</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="process">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>600</y>
+      <width>900</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">styleSheet{color:rgb(0, 170, 255)}</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionOpenFile"/>
+    <addaction name="actionOpenDir"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>阈值分割</string>
+    </property>
+    <addaction name="actionSegmentFixedThreshold"/>
+    <addaction name="actionSegmentOTSU"/>
+    <addaction name="actionSegmentAdaptive"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>区域分割</string>
+    </property>
+    <addaction name="actionWatershed"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>边缘检测</string>
+    </property>
+    <addaction name="actionCanny"/>
+    <addaction name="actionSobel"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>粗定位</string>
+    </property>
+    <widget class="QMenu" name="menuSVM">
+     <property name="title">
+      <string>SVM</string>
+     </property>
+     <addaction name="action162HOG"/>
+     <addaction name="action270HOG_4GLCM_26LBP"/>
+     <addaction name="action324HOG_4GLCM_26LBP"/>
+    </widget>
+    <addaction name="menuSVM"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>分割缺陷</string>
+    </property>
+    <widget class="QMenu" name="menu_7">
+     <property name="title">
+      <string>检测-分割</string>
+     </property>
+     <addaction name="action_svm_adaptive"/>
+     <addaction name="action_svm_fixed"/>
+     <addaction name="action_svm_OTSU"/>
+     <addaction name="action_svm_Canny"/>
+    </widget>
+    <addaction name="menu_7"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_6"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <action name="actionOpenFile">
+   <property name="text">
+    <string>open file(&amp;F)</string>
+   </property>
+  </action>
+  <action name="actionOpenDir">
+   <property name="text">
+    <string>open dir(&amp;D)</string>
+   </property>
+  </action>
+  <action name="actionSegmentFixedThreshold">
+   <property name="text">
+    <string>固定阈值分割</string>
+   </property>
+  </action>
+  <action name="actionSegmentOTSU">
+   <property name="text">
+    <string>大津法</string>
+   </property>
+  </action>
+  <action name="actionSegmentAdaptive">
+   <property name="text">
+    <string>自适应阈值分割</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny</string>
+   </property>
+  </action>
+  <action name="actionWatershed">
+   <property name="text">
+    <string>分水岭算法</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="action162HOG">
+   <property name="text">
+    <string>162HOG+4GLCM+26LBP</string>
+   </property>
+  </action>
+  <action name="action270HOG_4GLCM_26LBP">
+   <property name="text">
+    <string>270HOG+4GLCM+26LBP</string>
+   </property>
+  </action>
+  <action name="action324HOG_4GLCM_26LBP">
+   <property name="text">
+    <string>324HOG+4GLCM+26LBP</string>
+   </property>
+  </action>
+  <action name="action_svm_adaptive">
+   <property name="text">
+    <string>自适应阈值分割</string>
+   </property>
+  </action>
+  <action name="action_svm_fixed">
+   <property name="text">
+    <string>固定阈值分割</string>
+   </property>
+  </action>
+  <action name="action_svm_OTSU">
+   <property name="text">
+    <string>OTSU大津法</string>
+   </property>
+  </action>
+  <action name="action_svm_Canny">
+   <property name="text">
+    <string>Canny边缘检测</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>424</x>
+     <y>533</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
